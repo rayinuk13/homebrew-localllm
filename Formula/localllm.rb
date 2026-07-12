@@ -1,10 +1,10 @@
 class Localllm < Formula
   desc "Download and run LLMs locally. 98 models. More than Ollama."
   homepage "https://github.com/rayinuk13/localllm"
-  url "https://github.com/rayinuk13/localllm/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "98fd2428124051b622012d938f25a99d57975da663861058d8154849e2a19870"
+  url "https://github.com/rayinuk13/localllm/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "ec36c6f5361004ed315914fd738a8fb418281107c0bc4092afe347c0da6bad44"
   license "MIT"
-  version "1.1.0"
+  version "1.2.0"
 
   depends_on "llama.cpp" => :recommended
   depends_on "python3"
@@ -23,12 +23,12 @@ class Localllm < Formula
     <<~EOS
       localllm is ready. Quick start:
 
-        localllm list                    — see all 98 models
-        localllm pull llama3.1-8b        — download a model (~5GB)
-        localllm run  llama3.1-8b        — run it interactively
-        localllm search reasoning        — find reasoning models
-        localllm list --tag thinking     — o1-style models
-        localllm list --family qwen3     — filter by family
+        localllm list                     — 98 models with icons + RAM
+        localllm pull llama3.1-8b         — animated download with live ETA
+        localllm run  llama3.1-8b         — run interactively
+        localllm stats                    — disk usage dashboard
+        localllm search reasoning         — search with highlights
+        localllm list --tag vision        — filter by capability
 
       llama.cpp is required to run GGUF models:
         brew install llama.cpp
