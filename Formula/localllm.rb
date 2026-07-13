@@ -1,10 +1,10 @@
 class Localllm < Formula
-  desc "Download and run LLMs locally. 98 models + OpenAI cloud. More than Ollama."
+  desc "Download and run LLMs locally. 98 models + OpenAI cloud. AES-256 encrypted keys."
   homepage "https://github.com/rayinuk13/localllm"
-  url "https://github.com/rayinuk13/localllm/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "2d1c63f70b80cfb5ada322d99c14c867b915ebfecde057124f12f86d1a9911c4"
+  url "https://github.com/rayinuk13/localllm/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "d0ebd3ad7640fda35425ace028a166981366b48dcc2c7bc3f01e31fe250b72d3"
   license "MIT"
-  version "1.3.0"
+  version "1.4.0"
 
   depends_on "llama.cpp" => :recommended
   depends_on "python3"
@@ -21,23 +21,17 @@ class Localllm < Formula
 
   def caveats
     <<~EOS
-      localllm v1.3.0 is ready.
+      localllm v1.4.0 — dashboard + AES-256 encrypted keys
 
-      Local models (98):
-        localllm list
-        localllm pull llama3.1-8b
-        localllm run  llama3.1-8b
-
-      OpenAI / ChatGPT:
-        localllm openai key sk-…
+        localllm                  — dashboard with all commands
+        localllm models           — full model browser (106 total)
+        localllm download <id>    — download with live progress
+        localllm run <id>         — run interactively
+        localllm openai key sk-…  — save OpenAI key (AES-256 encrypted)
         localllm openai run gpt-4.1-mini
-        localllm openai run o4-mini
 
-      Billing (active when cloud backend launches):
-        localllm billing
-
-      Config is stored at ~/.localllm/config.json (chmod 600).
-      API keys are masked in all output and never logged.
+      All API keys are AES-256-GCM encrypted at rest, machine-locked.
+      Config: ~/.localllm/config.json (chmod 600)
     EOS
   end
 
