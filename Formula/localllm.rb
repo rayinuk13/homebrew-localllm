@@ -1,10 +1,10 @@
 class Localllm < Formula
-  desc "Download and run LLMs locally. 98 models. More than Ollama."
+  desc "Download and run LLMs locally. 98 models + OpenAI cloud. More than Ollama."
   homepage "https://github.com/rayinuk13/localllm"
-  url "https://github.com/rayinuk13/localllm/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "ec36c6f5361004ed315914fd738a8fb418281107c0bc4092afe347c0da6bad44"
+  url "https://github.com/rayinuk13/localllm/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "2d1c63f70b80cfb5ada322d99c14c867b915ebfecde057124f12f86d1a9911c4"
   license "MIT"
-  version "1.2.0"
+  version "1.3.0"
 
   depends_on "llama.cpp" => :recommended
   depends_on "python3"
@@ -21,20 +21,23 @@ class Localllm < Formula
 
   def caveats
     <<~EOS
-      localllm is ready. Quick start:
+      localllm v1.3.0 is ready.
 
-        localllm list                     — 98 models with icons + RAM
-        localllm pull llama3.1-8b         — animated download with live ETA
-        localllm run  llama3.1-8b         — run interactively
-        localllm stats                    — disk usage dashboard
-        localllm search reasoning         — search with highlights
-        localllm list --tag vision        — filter by capability
+      Local models (98):
+        localllm list
+        localllm pull llama3.1-8b
+        localllm run  llama3.1-8b
 
-      llama.cpp is required to run GGUF models:
-        brew install llama.cpp
+      OpenAI / ChatGPT:
+        localllm openai key sk-…
+        localllm openai run gpt-4.1-mini
+        localllm openai run o4-mini
 
-      For Apple Silicon MLX models:
-        pip3 install mlx-lm
+      Billing (active when cloud backend launches):
+        localllm billing
+
+      Config is stored at ~/.localllm/config.json (chmod 600).
+      API keys are masked in all output and never logged.
     EOS
   end
 
