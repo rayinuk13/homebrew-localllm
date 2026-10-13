@@ -2,7 +2,7 @@ class Localllm < Formula
   desc "Download and run LLMs locally. 98 models + OpenAI cloud. AES-256 encrypted keys."
   homepage "https://github.com/rayinuk13/localllm"
   url "https://github.com/rayinuk13/localllm/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "d0ebd3ad7640fda35425ace028a166981366b48dcc2c7bc3f01e31fe250b72d3"
+  sha256 "0e36651519923c0ff80463a1dc22515ad732db4d427dc6eaf39db4c57164e774"
   license "MIT"
   version "1.4.0"
 
